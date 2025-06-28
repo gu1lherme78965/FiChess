@@ -1,16 +1,6 @@
 #include <thread>
 #include <iostream>
 
-int main() {
-    // initial parameter setup
-    std::string input;
-    bool running = true;
-    std::cin >> input;
-
-    // communication protocol selection
-    if (input=="uci") UCIProtocol();
-}
-
 void UCIProtocol() {
     // engine identification and protocol confirmation
     std::cout << "id name FiChess" << std::endl;
@@ -32,4 +22,14 @@ void UCIProtocol() {
             std::cout << "readyok" << std::endl;
         }
     }
+}
+
+int main() {
+    // initial parameter setup
+    std::string input;
+    bool running = true;
+    std::cin >> input;
+
+    // communication protocol selection
+    if (input=="uci") UCIProtocol();
 }
