@@ -24,6 +24,25 @@ void UCIProtocol() {
     }
 }
 
+void PerftProtocol() {
+    // engine PerftProtocol confirmation
+    std::cout << "PerftProtocol active";
+
+    // initial parameter setup
+    std::string input;
+    bool running = true;
+
+    // main comunication loop
+    while (running) {
+        std::cin >> input;
+
+        // command detection and response
+        if (input=="quit") {
+            running = false;
+        }
+    }
+}
+
 int main() {
     // initial parameter setup
     std::string input;
@@ -32,4 +51,5 @@ int main() {
 
     // communication protocol selection
     if (input=="uci") UCIProtocol();
+    else if (input=="perft") PerftProtocol();
 }
