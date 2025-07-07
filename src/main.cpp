@@ -1,7 +1,8 @@
 #include <thread>
 #include <iostream>
+#include "Engine.hpp"
 
-void UCIProtocol() {
+void UCIProtocol(Engine& engine) {
     // engine identification and protocol confirmation
     std::cout << "id name FiChess" << std::endl;
     std::cout << "id author Guilherme Figueiredo" << std::endl;
@@ -24,9 +25,9 @@ void UCIProtocol() {
     }
 }
 
-void PerftProtocol() {
+void PerftProtocol(Engine& engine) {
     // engine PerftProtocol confirmation
-    std::cout << "PerftProtocol active";
+    std::cout << "PerftProtocol active" << std::endl;
 
     // initial parameter setup
     std::string input;
@@ -48,8 +49,9 @@ int main() {
     std::string input;
     bool running = true;
     std::cin >> input;
+    Engine engine = Engine();
 
     // communication protocol selection
-    if (input=="uci") UCIProtocol();
-    else if (input=="perft") PerftProtocol();
+    if (input=="uci") UCIProtocol(engine);
+    else if (input=="perft") PerftProtocol(engine);
 }
